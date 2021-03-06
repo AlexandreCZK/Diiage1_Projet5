@@ -1,0 +1,39 @@
+﻿@{ Layout = "_Squelette"; }
+@addTagHelper*,Microsoft.AspNetCore.Mvc.TagHelpers
+@model Groupe1.Webzine.Entity.Artiste
+<div class="ms-3 mt-3">
+    @if (Model == null)
+    {<h1>Creer un artiste </h1>}
+    else
+    { <h1>Editer un artiste </h1>}
+    <hr />
+    <div asp-validation-summary="All"></div>
+    <form method="post" asp-area="Administration" asp-controller="Artiste" asp-action="Create_UpdateAction">
+        <div class="mb-3 row">
+            <div class="col-1">
+                <label class="form-label" for="inputNom">Nom de l'artiste <sup>*</sup></label>
+            </div>
+            <div class="col-9">
+                <input class="form-control" asp-for="Nom" />
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <div class="col-1">
+                <label for="textareaBiographie" class="form-label">Biographie</label>
+            </div>
+            <div class="col-9">
+                <textarea class="form-control" asp-for="Biographie"></textarea>
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <div class="col-1">
+
+            </div>
+            <div class="col-9">
+                <input asp-for="IdArtiste" hidden />
+                <input class="btn btn-primary" type="submit" value="Sauvegarder" />
+            </div>
+        </div>
+    </form>
+    <a class="text-primary" asp-area="Administration" asp-controller="Artiste" asp-action="Index">Retour à l'administration des artistes</a>
+</div>

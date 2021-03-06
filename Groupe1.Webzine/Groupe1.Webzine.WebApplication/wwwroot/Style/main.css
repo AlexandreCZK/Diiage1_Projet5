@@ -1,0 +1,36 @@
+﻿body{
+    /*position: relative;*/
+}
+sup {
+    color: red;
+}
+
+.fas {
+    color: #d3d3d3;
+}
+
+.fa-calendar, .fa-tags {
+    color: black;
+}
+
+.title-reviewed {
+    margin-top: 1rem !important;
+}
+
+footer {
+    color: #8f8f8f !important;
+    background: #ececec !important;
+    width: 100%;
+    bottom: 0;
+    /*position: absolute;*/
+}
+
+li.nav-item>svg
+{
+    color:#fff;
+}
+
+#follow-us > .btn {
+    background-color: #CBCBCB;
+    color: #3E76BC;
+}

@@ -1,0 +1,22 @@
+﻿@{ Layout = "_Squelette"; }
+@addTagHelper*,Microsoft.AspNetCore.Mvc.TagHelpers
+@model Groupe1.Webzine.Entity.Commentaire
+<div class="ms-3 mt-3">
+    <h1>
+        Supprimer un commentaire
+    </h1>
+    <p>
+        Etes vous sûr de vouloir supprimer le commentaire suivant ?
+    </p>
+    <div class="mb-4">
+        <span>@Model.Auteur</span>
+        <span class="text-secondary">le @Model.DateCreation</span>
+        <span class="text-secondary">sur <span class="text-primary">@Model.Titre.Libelle</span></span>
+    </div>
+    <div asp-validation-summary="All"></div>
+    <form asp-area="Administration" asp-controller="Commentaire" asp-action="DeleteAction">
+        <input asp-for="@Model.IdCommentaire" hidden />
+        <input class="btn btn-danger mb-4" type="submit" value="Supprimer" />
+    </form>
+    <a class="text-primary" asp-area="Administration" asp-controller="Commentaire" asp-action="Index">Retour à l'administration des commentaires</a>
+</div>

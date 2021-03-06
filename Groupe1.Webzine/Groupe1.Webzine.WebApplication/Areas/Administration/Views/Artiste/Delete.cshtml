@@ -1,0 +1,17 @@
+﻿@{ Layout = "_Squelette"; }
+@addTagHelper*,Microsoft.AspNetCore.Mvc.TagHelpers
+@model Groupe1.Webzine.Entity.Artiste
+<div class="ms-3 mt-3">
+    <h1>
+        Supprimer un Artiste
+    </h1>
+    <p>
+        Etes vous sûr de vouloir supprimer l'artiste @Model.Nom
+    </p>
+    <div asp-validation-summary="All"></div>
+    <form asp-area="Administration" asp-controller="Artiste" asp-action="DeleteAction">
+        <input asp-for="IdArtiste" hidden />
+        <input class="btn btn-danger mb-4" type="submit" value="Supprimer" />
+    </form>
+    <a class="text-primary" asp-area="Administration" asp-controller="Artiste" asp-action="Index">Retour à l'administration des artistes</a>
+</div>

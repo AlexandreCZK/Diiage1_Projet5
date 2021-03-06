@@ -1,0 +1,93 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Groupe1.Webzine.Business.Contracts\Groupe1.Webzine.Business.Contracts.csproj" />
+    <ProjectReference Include="..\Groupe1.Webzine.Business\Groupe1.Webzine.Business.csproj" />
+    <ProjectReference Include="..\Groupe1.Webzine.EntitiesContext\Groupe1.Webzine.EntitiesContext.csproj" />
+    <ProjectReference Include="..\Groupe1.Webzine.Entity\Groupe1.Webzine.Entity.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="ViewModel\**" />
+    <Content Remove="ViewModel\**" />
+    <EmbeddedResource Remove="ViewModel\**" />
+    <None Remove="ViewModel\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Areas\Administration\ViewModels\ArtisteDeleteVM.cs~RFee91fb7.TMP" />
+    <None Remove="Areas\Administration\Views\Artiste\Delete.cshtml~RFeceaf67.TMP" />
+    <None Remove="Areas\Administration\Views\Artiste\Edit.cshtml~RFf1437e1.TMP" />
+    <None Remove="Areas\Administration\Views\Titre\Delete.cshtml~RFea389b0.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Groupe1.Webzine.Entity\Groupe1.Webzine.Entity.csproj" />
+    <ProjectReference Include="..\Groupe1.Webzine.Repository.Contracts\Groupe1.Webzine.Repository.Contracts.csproj" />
+    <ProjectReference Include="..\Groupe1.Webzine.Repository\Groupe1.Webzine.Repository.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Administration\ViewModels\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
+    <None Include="wwwroot\fontawesome\fontawesome-free-5.15.1-web\js\all.js" />
+    <None Include="wwwroot\fontawesome\fontawesome-free-5.15.1-web\js\all.min.js" />
+    <None Include="wwwroot\fontawesome\fontawesome-free-5.15.1-web\js\brands.js" />
+    <None Include="wwwroot\fontawesome\fontawesome-free-5.15.1-web\js\brands.min.js" />
+    <None Include="wwwroot\fontawesome\fontawesome-free-5.15.1-web\js\conflict-detection.js" />
+    <None Include="wwwroot\fontawesome\fontawesome-free-5.15.1-web\js\conflict-detection.min.js" />
+    <None Include="wwwroot\fontawesome\fontawesome-free-5.15.1-web\js\fontawesome.js" />
+    <None Include="wwwroot\fontawesome\fontawesome-free-5.15.1-web\js\fontawesome.min.js" />
+    <None Include="wwwroot\fontawesome\fontawesome-free-5.15.1-web\js\regular.js" />
+    <None Include="wwwroot\fontawesome\fontawesome-free-5.15.1-web\js\regular.min.js" />
+    <None Include="wwwroot\fontawesome\fontawesome-free-5.15.1-web\js\solid.js" />
+    <None Include="wwwroot\fontawesome\fontawesome-free-5.15.1-web\js\solid.min.js" />
+    <None Include="wwwroot\fontawesome\fontawesome-free-5.15.1-web\js\v4-shims.js" />
+    <None Include="wwwroot\fontawesome\fontawesome-free-5.15.1-web\js\v4-shims.min.js" />
+    <None Include="wwwroot\lib\bootstrap-5.0.0-beta1-dist\css\bootstrap-grid.css.map" />
+    <None Include="wwwroot\lib\bootstrap-5.0.0-beta1-dist\css\bootstrap-grid.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap-5.0.0-beta1-dist\css\bootstrap-grid.rtl.css.map" />
+    <None Include="wwwroot\lib\bootstrap-5.0.0-beta1-dist\css\bootstrap-grid.rtl.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap-5.0.0-beta1-dist\css\bootstrap-reboot.css.map" />
+    <None Include="wwwroot\lib\bootstrap-5.0.0-beta1-dist\css\bootstrap-reboot.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap-5.0.0-beta1-dist\css\bootstrap-reboot.rtl.css.map" />
+    <None Include="wwwroot\lib\bootstrap-5.0.0-beta1-dist\css\bootstrap-reboot.rtl.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap-5.0.0-beta1-dist\css\bootstrap-utilities.css.map" />
+    <None Include="wwwroot\lib\bootstrap-5.0.0-beta1-dist\css\bootstrap-utilities.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap-5.0.0-beta1-dist\css\bootstrap-utilities.rtl.css.map" />
+    <None Include="wwwroot\lib\bootstrap-5.0.0-beta1-dist\css\bootstrap-utilities.rtl.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap-5.0.0-beta1-dist\css\bootstrap.css.map" />
+    <None Include="wwwroot\lib\bootstrap-5.0.0-beta1-dist\css\bootstrap.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap-5.0.0-beta1-dist\css\bootstrap.rtl.css.map" />
+    <None Include="wwwroot\lib\bootstrap-5.0.0-beta1-dist\css\bootstrap.rtl.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap-5.0.0-beta1-dist\js\bootstrap.bundle.js" />
+    <None Include="wwwroot\lib\bootstrap-5.0.0-beta1-dist\js\bootstrap.bundle.js.map" />
+    <None Include="wwwroot\lib\bootstrap-5.0.0-beta1-dist\js\bootstrap.bundle.min.js" />
+    <None Include="wwwroot\lib\bootstrap-5.0.0-beta1-dist\js\bootstrap.bundle.min.js.map" />
+    <None Include="wwwroot\lib\bootstrap-5.0.0-beta1-dist\js\bootstrap.esm.js" />
+    <None Include="wwwroot\lib\bootstrap-5.0.0-beta1-dist\js\bootstrap.esm.js.map" />
+    <None Include="wwwroot\lib\bootstrap-5.0.0-beta1-dist\js\bootstrap.esm.min.js" />
+    <None Include="wwwroot\lib\bootstrap-5.0.0-beta1-dist\js\bootstrap.esm.min.js.map" />
+    <None Include="wwwroot\lib\bootstrap-5.0.0-beta1-dist\js\bootstrap.js" />
+    <None Include="wwwroot\lib\bootstrap-5.0.0-beta1-dist\js\bootstrap.js.map" />
+    <None Include="wwwroot\lib\bootstrap-5.0.0-beta1-dist\js\bootstrap.min.js" />
+    <None Include="wwwroot\lib\bootstrap-5.0.0-beta1-dist\js\bootstrap.min.js.map" />
+    <None Include="wwwroot\Style\main.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.0" />
+    <PackageReference Include="NLog" Version="4.7.6" />
+    <PackageReference Include="NLog.Web.AspNetCore" Version="4.10.0" />
+    <PackageReference Include="System.Dynamic.Runtime" Version="4.3.0" />
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="5.0.0" />
+  </ItemGroup>
+
+</Project>

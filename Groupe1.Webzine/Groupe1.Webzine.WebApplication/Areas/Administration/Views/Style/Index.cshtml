@@ -1,0 +1,31 @@
+﻿@{ Layout = "_Squelette"; }
+@addTagHelper*,Microsoft.AspNetCore.Mvc.TagHelpers
+@model List<Groupe1.Webzine.Entity.Style>
+<h1 class="mx-3 py-4">
+    Styles
+</h1>
+
+<a class="btn btn-primary mx-3" asp-area="Administration" asp-controller="Style" asp-action="Create">Ajouter un style</a>
+
+<div class="fluid-container pt-3">
+    <table class="table table-striped w-100 ms-3">
+        <thead>
+            <tr>
+                <th class="w-75">Libellé</th>
+                <th class="w-25">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Libelle</td>
+                    <td>
+                        <a class="text-primary" asp-area="Administration" asp-controller="Style" asp-action="Edit" asp-route-id="@item.IdStyle"><i class="far fa-edit text-primary"></i></a>
+                        <a class="text-primary" asp-area="Administration" asp-controller="Style" asp-action="Delete" asp-route-id="@item.IdStyle"><i class="fas fa-trash text-primary"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

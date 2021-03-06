@@ -1,0 +1,51 @@
+﻿@addTagHelper*,Microsoft.AspNetCore.Mvc.TagHelpers
+@{ Layout = "_Squelette"; }
+<div class="row">
+    <div class="col-sm-8">
+        <section>
+            <br />
+            <h2> @Model.NomArtiste</h2>
+            <hr />
+            <article>
+                <p>
+                    @Model.BioArtiste
+                </p>
+            </article>
+        </section>
+        <section>
+            <h2>Albums</h2>
+            <hr />
+        </section>
+        @foreach (var i in Model.Titres)
+        {
+            <div class="row">
+                <div class="col-sm-4">
+                    <br />
+                    <img class="card-img-top p-3" src="@i.UrlJaquette" />
+                    <br /> <br /> <br />
+                </div>
+                <div class="col-sm-8">
+                    <h4> @i.Album</h4>
+                    <table class="table">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Titre</th>
+                                <th>Durée</th>
+                                <th><center>Chronique</center></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>@i.Libelle</td>
+                                <td>@i.Duree</td>
+                                <td><center><a asp-area="" asp-controller="Titre" asp-action="Index" asp-route-id="@i.IdTitre"><i class="fas fa-link"></i></a></center></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

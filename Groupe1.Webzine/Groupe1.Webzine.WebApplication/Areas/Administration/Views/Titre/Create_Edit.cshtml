@@ -1,0 +1,127 @@
+﻿@{ Layout = "_Squelette"; }
+@addTagHelper*,Microsoft.AspNetCore.Mvc.TagHelpers
+@model Groupe1.Webzine.Entity.Titre
+<div class="ms-3 mt-3">
+    @if (Model == null)
+    {<h1>Creer un titre </h1>}
+    else
+    { <h1>Editer un titre </h1>}
+    <div asp-validation-summary="All"></div>
+    <form asp-area="Administration" asp-controller="Titre" asp-action="Create_UpdateAction">
+        <div class="mb-3 row">
+            <div class="col-1">
+                <label for="inputNom" class="form-label">Nom de l'artiste <sup>*</sup></label>
+            </div>
+            <div class="col-9">
+                <select class="w-100" asp-for="IdArtiste"
+                        asp-items="@(new SelectList(ViewBag.Artistes,"IdArtiste","Nom"))">
+                </select>
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <div class="col-1">
+                <label for="inputTitre" class="form-label">Titre <sup>*</sup></label>
+            </div>
+            <div class="col-9">
+                <input class="form-control" id="inputTite" asp-for="@Model.Libelle" />
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <div class="col-1">
+                <label for="inputAlbum" class="form-label">Album <sup>*</sup></label>
+            </div>
+            <div class="col-9">
+                <input class="form-control" id="inputAlbum" asp-for="@Model.Album" />
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <div class="col-1">
+                <label for="textareaBiographie" class="form-label">Chronique <sup>*</sup></label>
+            </div>
+            <div class="col-9">
+                <textarea class="form-control" id="textareaBiographie" asp-for="@Model.Chronique"></textarea>
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <div class="col-1">
+
+                <label for="inputDateSortie" class="form-label">Date de sortie <sup>*</sup></label>
+            </div>
+            <div class="col-3">
+                <input class="form-control" asp-for="@Model.DateSortie" id="inputDateSortie" />
+            </div>
+            <div class="col-3">
+                <label for="inputDureeSeconde" class="form-label">Durée en seconde <sup>*</sup></label>
+            </div>
+            <div class="col-3">
+                <div class="input-group">
+                    <input class="form-control" id="inputDureeSeconde" asp-for="@Model.Duree" />
+                    <span class="input-group-text" id="secondes">secondes</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <div class="col-1">
+                <label class="form-label" for="inputJaquette">Jaquette de l'album <sup>*</sup></label>
+            </div>
+            <div class="col-9">
+                <input class="form-control" id="inputJaquette" asp-for="@Model.UrlJaquette">
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <div class="col-1">
+                <label class="form-label" for="inputURL">URL d'écoute</label>
+            </div>
+            <div class="col-9">
+                <input class="form-control" id="inputURL" asp-for="@Model.UrlEcoute">
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <div class="col-1">
+                <label for="inputStyles" class="form-label">Styles</label>
+            </div>
+            <div class="col-9">
+                <div class="row">
+                    @foreach (var item in ViewBag.Styles)
+                    {
+                        <div class="col-4">
+                            <label class="text-capitalize"><input class="me-2" type="checkbox" value="@item.IdStyle">@item.Libelle</label>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <div class="col-1">
+                <label class="form-label">Nombre de lectures <sup>*</sup></label>
+            </div>
+            <div class="col-1">
+                <input class="form-control" id="inputNom" asp-for="@Model.NbLectures" disabled>
+            </div>
+        </div>
+
+        <div class="mb-3 row">
+            <div class="col-1">
+                <label class="form-label">Nombres de likes <sup>*</sup></label>
+            </div>
+            <div class="col-1">
+                <input class="form-control" id="inputNom" asp-for="@Model.NbLikes" disabled>
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <div class="col-1"></div>
+            <div class="col-9">
+                <input asp-for="IdTitre" hidden />
+                <input class="btn btn-primary" type="submit" value="Sauvegarder" />
+            </div>
+        </div>
+    </form>
+    <a class="text-primary" asp-area="Administration" asp-controller="Titre" asp-action="Index">Retour à l'administration des titres</a>
+</div>

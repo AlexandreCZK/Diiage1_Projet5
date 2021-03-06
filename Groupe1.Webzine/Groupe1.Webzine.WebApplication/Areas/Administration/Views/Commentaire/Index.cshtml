@@ -1,0 +1,44 @@
+﻿@{ Layout = "_Squelette"; }
+@addTagHelper*,Microsoft.AspNetCore.Mvc.TagHelpers
+@model List<Groupe1.Webzine.Entity.Commentaire>
+<div class="ms-3">
+    <h1 class="mx-3 py-4">
+        Commentaires
+    </h1>
+
+    <table class="table table-striped w-100">
+        <thead>
+            <tr>
+                <th>
+                    Titre
+                </th>
+                <th>
+                    Nom
+                </th>
+                <th>
+                    Commentaire
+                </th>
+                <th>
+                    Date de création
+                </th>
+                <th>
+                    Actions
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="text-primary">@item.Titre.Libelle</td>
+                    <td>@item.Auteur</td>
+                    <td>@item.Contenu</td>
+                    <td>@item.DateCreation</td>
+                    <td>
+                        <a class="text-primary" asp-area="Administration" asp-controller="Commentaire" asp-action="Delete" asp-route-id="@item.IdCommentaire"><i class="fas fa-trash text-primary"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

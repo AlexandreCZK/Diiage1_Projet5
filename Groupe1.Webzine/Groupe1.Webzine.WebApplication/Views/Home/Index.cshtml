@@ -1,0 +1,59 @@
+﻿@addTagHelper*,Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "_Squelette";
+    var classe = "";
+}
+<div id="last-titles">
+    <h1>Derniers titres chroniqués</h1>
+    @for (int i = 0; i < 3; i++)
+    {
+        if (i >= 1) { classe = "mt-3"; }
+        <div class="row ms-3 bg-light @classe">
+            <div class="col-2">
+                <a asp-area="" asp-controller="Titre" asp-action="Index" asp-route-id="@Model[i].Id">
+                    <img src="@Model[i].Jaquette" class="card-img-top p-2" alt="@Model[i].Artiste - @Model[i].Nom">
+                </a>
+            </div>
+            <div class="col-9">
+                <div class="row">
+                    <h4 class="p-2"><a asp-area="" asp-controller="Titre" asp-action="Index" asp-route-id="@Model[i].Id" class="text-decoration-none">@Model[i].Artiste - @Model[i].Nom</a></h4>
+                </div>
+                <div class="row p-2 overflow-hidden" style="height: 100px">
+                    @Model[i].Chronique
+                </div>
+                <a class="btn btn-primary" asp-area="" asp-controller="Titre" asp-action="Index" asp-route-id="@Model[i].Id">Lire la suite</a>
+                <i class="fas fa-calendar text-dark ms-3"></i> @Model[i].Date
+                <i class="fas fa-tags text-dark ms-3"></i> 
+                @foreach (var style in Model[i].Styles)
+                {
+                    <a class="text-decoration-none" asp-controller="titres" asp-action="style" asp-route-id="@style.Libelle">@style.Libelle</a>
+                }
+            </div>
+        </div>
+
+    }
+    <div class="row mt-4">
+        <div class="col-sm-6">
+            <button type="button" class="btn btn-secondary float-start">« Titres plus récents</button>
+        </div>
+        <div class="col-sm-6">
+            <button type="button" class="btn btn-secondary float-end">Titres plus anciens »</button>
+        </div>
+    </div>
+</div>
+<div class="row mt-3" id="popular-titles">
+    <h1>Titres les plus populaires</h1>
+    @for (int i = 0; i < 3; i++)
+    {
+        <div class="col-4">
+            <div class="card" style="width: 18rem;">
+                <img src="@ViewBag.betterTitresVM[i].Jaquette"
+                     class="card-img-top" alt="@ViewBag.betterTitresVM[i].Nom">
+                <div class="card-body">
+                    <a>@ViewBag.betterTitresVM[i].Nom</a>
+                    <span>par </span><a asp-controller="Artiste" asp-action="Index" asp-route-nom="@ViewBag.betterTitresVM[i].Artiste">@ViewBag.betterTitresVM[i].Artiste</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

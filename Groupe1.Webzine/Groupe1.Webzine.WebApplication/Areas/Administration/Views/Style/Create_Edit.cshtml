@@ -1,0 +1,23 @@
+﻿@{ Layout = "_Squelette"; }
+@addTagHelper*,Microsoft.AspNetCore.Mvc.TagHelpers
+@model Groupe1.Webzine.Entity.Style
+<div class="ms-3 mt-3">
+    @if (Model == null)
+    {<h1>Creer un style </h1>}
+    else
+    { <h1>Editer un style </h1>}
+    <div asp-validation-summary="All"></div>
+    <form class="mb-3 row" method="post" asp-area="Administration" asp-controller="Style" asp-action="Create_UpdateAction">
+        <div class="col-1 w-auto">
+            <label for="inputNom" class="form-label">Libellé <sup>*</sup></label>
+        </div>
+        <div class="col-3">
+            <input class="form-control" asp-for="Libelle" placeholder="disco">
+        </div>
+        <div class="col-2">
+            <input asp-for="IdStyle" hidden />
+            <input class="btn btn-primary" type="submit" value="Sauvegarder" />
+        </div>
+    </form>
+    <a class="text-primary mt-4" asp-area="Administration" asp-controller="Style" asp-action="Index">Retour à l'administration des artistes</a>
+</div>

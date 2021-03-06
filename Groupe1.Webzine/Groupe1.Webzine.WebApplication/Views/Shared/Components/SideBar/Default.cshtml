@@ -1,0 +1,11 @@
+﻿ @model List<Groupe1.Webzine.Entity.Style>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<h1>A propos</h1>
+<p>Retrouvez les dernières pépites sur notre webzine</p>
+<h1>Styles</h1>
+<ul>
+    @foreach (var style in Model)
+    {
+        <li><a asp-controller="titres" asp-action="style" asp-route-id="@style.Libelle" class="text-decoration-none">@style.Libelle</a></li>
+    }
+</ul>

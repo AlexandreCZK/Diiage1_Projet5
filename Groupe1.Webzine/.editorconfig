@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CS0006: Metadata file 'E:\Diiage\Projets\Groupe 1 - Projet 5\Groupe1.Webzine\Groupe1.Webzine.Repository\bin\Debug\netcoreapp3.1\Groupe1.Webzine.Repository.dll' could not be found
+dotnet_diagnostic.CS0006.severity = warning
